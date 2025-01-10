@@ -1,0 +1,33 @@
+.heding {
+    letter-spacing: 0px;
+    border-right: 2px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(10) infinite alternate; /* Adjusted steps for 'bana' and 'ho' */
+   
+  }
+  
+  @keyframes cursor {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes typing {
+    0% {
+      width: 0; /* Starting point */
+    }
+    25% {
+      width: 50%; /* Midway for 'bana' */
+    }
+    50% {
+      content: "bana"; /* First word */
+    }
+    75% {
+      width: 100%; /* Complete width for 'bana' */
+    }
+    100% {
+      content: "ho"; /* Second word */
+    }
+  }
