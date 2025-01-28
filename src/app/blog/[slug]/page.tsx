@@ -1,6 +1,12 @@
-import { client } from "@/sanity/lib/client";
+
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+
+import Comments from "@/app/components/Comments";
+import { client } from "@/sanity/lib/client";
+
+
+
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -30,7 +36,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   return (
     <article className="px-6 py-8 max-w-4xl mx-auto">
       {/* Blog Title */}
-      <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">{blog.title}</h1>
+      <h1 className="text-4xl font-bold mb-4 text-white dark:text-white">{blog.title}</h1>
 
       {/* Blog Image */}
       <Image
@@ -53,8 +59,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         />
         {/* Author Name and Bio */}
         <div>
-          <p className="text-lg font-semibold text-gray-800 dark:text-gray-300">{blog.author.name}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mt-1">
+          <p className="text-lg font-semibold text-white dark:text-gray-300">{blog.author.name}</p>
+          <p className="text-sm text-white dark:text-gray-400 leading-relaxed mt-1">
             {blog.author.bio}
           </p>
         </div>
@@ -69,6 +75,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <div className="prose max-w-none dark:prose-invert">
         <PortableText value={blog.content} />
       </div>
+
+       <div className="mt-8">
+
+          <Comments />
+        </div>
     </article>
   );
 }
