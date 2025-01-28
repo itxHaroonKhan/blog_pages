@@ -10,7 +10,7 @@ const Page = () => {
           <Image
             className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded-lg shadow-lg"
             alt="hero"
-            src="https://via.placeholder.com/720x600.png?text=Your+Image+Here"
+            src="https://i.pinimg.com/736x/3f/3d/95/3f3d950be40cf825070bec36ea91bc60.jpg"
             width={720}
             height={600}
           />
